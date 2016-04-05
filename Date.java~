@@ -25,7 +25,7 @@ public class Date{
 	
 	/**Para obtener el anyo **/
 	public int getYear(){
-		return _year;
+		return _yea;
 	}
 
 	/**Condiciones para el día. Modificar**/
