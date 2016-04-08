@@ -225,28 +225,62 @@ public class Date{
 	}
 	
 	 public int daysOfMonths(){
-		//equalsMonth = new int();
+		equalsMonth = new int();
 		switch(_month){
-		case 1:
-		case 3:
-		case 5:
-		case 7:
-		case 8:
-		case 10:
-		case 12:
-			return 31;
+		case 1: if((_day<=31) && (_day>0)){
+			}
+			
 			
 			break;
-		case 2: 
-			return 29;	
+		case 2: if((_day<=29) && (_day>0)){
+			}	
+			break;
+		case 3: 
+			if((_day<=31) && (_day>0)){
+			}
 			break;
 		case 4: 
-		case 6: 
-		case 9:
-		case 11: 
-			return 30;
+			if((_day<=30) && (_day>0)){
+			}
 			break;
-		
+		case 5:
+			if((_day<=31) && (_day>0)){
+				
+			}
+			break;
+		case 6: 
+			if((_day<=30) && (day>0)){
+				
+			}
+			break;
+		case 7:
+			if((_day<=31) && (_day>0)){
+				
+			}
+			break;
+		case 8: 
+			if((_day<=31) && (_day>0)){
+			}
+			break;
+		case 9: 
+			if((_day<=30)&& (_day>0)){
+				
+			}
+			break;
+		case 10:
+			if((_day<=31) && (_day>0)){
+				
+			}
+			break;
+		case 11: 
+			if((_day<=30) && (_day>0)){
+				
+			}
+			break;
+		case 12: 
+			if((_day<=31)&& (_day>0)){
+			}
+			break;
 
 	}
 
@@ -277,7 +311,7 @@ public class Date{
 		}
 		
 		if(date.legth() !=0){
-			throw new DateException(date.toString());
+			throw new DateException(date.toString);
 		}else{
 			this._day =day;
 			this._month = month;
@@ -291,30 +325,22 @@ public class Date{
 
 
 	/*Escribir la fecha*/
-	public String toString(){
+	public String getDate(){
 	StringBuffer fecha = new StringBuffer();
 	fecha.append(getDay()+ "," +getMonth()+ "," +getYear());
-	return fecha.toString();
 	}
-	/*para que te imprima más días*/
-	public String toString(int dia, int mes, int agno){
-	StringBuffer fecha = new StringBuffer();
-	fecha.append(getDay()+ "," +getMonth()+ "," +getYear());
-	return fecha.toString();
-	}
-
 
 	/*
 	*Imprimir las fechas hasta el fin del mes
 	*	
 	*/
 
-	public String getDayLeft(){
-		StringBuffer dias = StringBuffer();
-		int contador;
-		for(i=this._day; i<=daysOfMonth();i++){
-			dias.append(toString(i,getMonth(),getYear()));
-			++contador;
+	public String getDayLeft(int day, int month){
+	StringBuffer dias = StringBuffer();
+	
+		for(i=getDate; i=daysOfMonth(this._month);i++){
+			dias.append("Quedan "+dias+ "para terminar el año");
+
 		}
 	}
 
@@ -331,80 +357,18 @@ public class Date{
 			equalsDays.append("" +day);
 		}
 	}
-	
-	/* daysOfMonths*/
-
-	public int daysOfMonths(int month){
-		
-		switch(_month){
-		case 1:
-		case 3:
-		case 5:
-		case 7:
-		case 8:
-		case 10:
-		case 12:
-			return 31;
-			
-			break;
-		case 2: 
-			return 29;	
-			break;
-		case 4: 
-		case 6: 
-		case 9:
-		case 11: 
-			return 30;
-			break;
-		}
-
-	}
-
 
 	/*
 	*Contar el número de días desde el primer día del año
 	*/
 
-	public int countDays(){
+	public int countDays(int day, int month){
 	int count =0;
-		for(i=1; i<=getMonth(); i++){
-			for(j=1; j<=daysOfMonth(i); j++){
-				++count;
-			}
-		}
-	return count;
+	for(i=1; i=this._day; i++){
+		
+		for(i=1; i= )
+		++count;
+
 	}
-
-
-
-
- 	/*Ejemplo
-	public boolean Anyo() throws DateException{
-	boolean anyo = true;
-	if(this._year<0){
-		throw new DateException("año negativo");
 	}
-
-
-	return false;
-
-	}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
